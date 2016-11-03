@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         mDatabase.child("0").child("sections").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                if(initialLoad){
+                if (initialLoad) {
 
                     // TODO initial Fetch
 
                     initialLoad = false;
-                }else{
+                } else {
                     // TODO onChildAdded
 
 
@@ -48,17 +48,17 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(MainActivity.this,"On Child AddedonChildChanged",Toast.LENGTH_SHORT).show();
+                // TODO play with data when onChildChanged
             }
 
             @Override
             public void onChildRemoved(DataSnapshot dataSnapshot) {
-                Toast.makeText(MainActivity.this,"On Child Removed",Toast.LENGTH_SHORT).show();
+                // TODO play with data when childElements were removed
             }
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-                Toast.makeText(MainActivity.this,"OnChild Moved",Toast.LENGTH_SHORT).show();
+                // TODO play with data when child element is moved
             }
 
             @Override
@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
