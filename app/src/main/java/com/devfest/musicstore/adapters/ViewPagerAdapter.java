@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 
 import home.fragments.HomeFragment;
+import radio.fragments.RadioFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
@@ -29,7 +30,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
                 return new HomeFragment();
 
             case 1:
-                return new HomeFragment();
+                return new RadioFragment();
         }
         return null;
 
