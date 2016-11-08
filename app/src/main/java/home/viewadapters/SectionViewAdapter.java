@@ -61,10 +61,6 @@ public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.
 
                 }
 
-                @Override
-                public void onMenuClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
-
-                }
             });
             //BIND Album View Adapter
             mAlbumListLinearLayoutManager = new LinearLayoutManager(mContext);
@@ -107,7 +103,6 @@ public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.
             final int position = getAdapterPosition();
             if (v instanceof ImageView) {
                 // TODO Tohandle if user click Image Vue
-
 
             } else {
                 sectionViewListener.onItemClickListener(String.valueOf(mSections.get(position).getTitle()), position, this);

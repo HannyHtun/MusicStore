@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MusicStore</string>
     <string name="hello_blank_fragment">Hello Blank fragment</string>
+    <string name="album_followers"> followers</string>
 </resources>

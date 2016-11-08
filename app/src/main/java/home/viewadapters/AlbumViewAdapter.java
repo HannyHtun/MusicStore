@@ -51,21 +51,30 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
 
 
         if(album != null){
-            holder.tvAlbumTitle.setText(TextUtils.isEmpty(album.getTitle())?"":album.getTitle());;
-            holder.tvFollowers.setText(TextUtils.isEmpty(album.getFollowers())?"":album.getFollowers());
+            holder.tvAlbumTitle.setText(TextUtils.isEmpty(album.getTitle())?"":album.getTitle());
+
+            holder.tvFollowers.setText(converttoK(album.getFollowers()));
             holder.ivAlbumImage.setBackgroundResource(R.drawable.ic_album);
 
         }
+    }
 
+    private String converttoK(String num) throws NumberFormatException{
 
-
+        if(!TextUtils.isEmpty(num)){
+            if(num.length() >= 4){
+                Long kVal = Long.valueOf(num);
+                kVal = kVal/1000;
+                return String.valueOf(kVal)+"K";
+            }else{
+                return num;
+            }
+        }
+        return "";
     }
 
     public interface AlbumViewListener {
         void onItemClickListener(String FilePath, int position, AlbumViewHolder vh);
-
-        void onMenuClickListener(String FilePath, int position, AlbumViewHolder vh);
-
     }
 
     @Override
@@ -101,8 +110,5 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
                 albumViewListener.onItemClickListener(String.valueOf(mAlbumList.get(position).getTitle()), position, this);
             }
         }
-
-
-
     }
 }
