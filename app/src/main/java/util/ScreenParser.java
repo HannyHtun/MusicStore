@@ -1,7 +1,9 @@
 package util;
 
 import com.google.firebase.database.DataSnapshot;
+
 import java.util.ArrayList;
+
 import model.Album;
 import model.Row;
 import model.Section;
@@ -14,7 +16,7 @@ public class ScreenParser {
 
     public static final String SECTION_TITLE = "title";
     public static final String SECTION_TYPE = "type";
-    public static final String SECTION_ROWS = "rows";
+    public static final String SECTION_ROWS = "row";
 
     DataSnapshot dataSnapshot;
 
@@ -45,7 +47,7 @@ public class ScreenParser {
         // Parse child Rows
         if (ds.hasChild(SECTION_ROWS)) {
             // parse Albums
-            section.setmRow(parseRow(ds));
+            section.setmRow(parseRow(ds.child("row")));
         }
 
         // You can extend sessions with more view models here
@@ -60,7 +62,7 @@ public class ScreenParser {
      */
     public Row parseRow(DataSnapshot ds) {
         Row row = new Row();
-        row.setAlbums(parseAlbums(ds));
+        row.setAlbums(parseAlbums(ds.child("data")));
         return row;
     }
 
@@ -73,7 +75,7 @@ public class ScreenParser {
      */
     public ArrayList<Album> parseAlbums(DataSnapshot ds) {
         ArrayList<Album> albumList = new ArrayList<>();
-        for (DataSnapshot album : ds.child("rows").getChildren()) {
+        for (DataSnapshot album : ds.getChildren()) {
             Album a = new Album();
             a.setTitle(album.child("title").getValue().toString());
             a.setFollowers(album.child("followers").getValue().toString());
