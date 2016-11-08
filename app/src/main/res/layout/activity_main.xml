@@ -13,12 +13,12 @@
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
+            android:layout_marginTop="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
         </android.support.v4.view.ViewPager>
-
-        <include layout="@layout/toolbar" />
 
     </RelativeLayout>
 
@@ -26,7 +26,7 @@
         android:id="@+id/tabs"
         style="@style/MyCustomTabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
         app:tabGravity="fill" />
 </FrameLayout>
