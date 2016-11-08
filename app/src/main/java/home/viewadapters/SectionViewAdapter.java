@@ -64,7 +64,18 @@ public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.
             });
             //BIND Album View Adapter
             mAlbumListLinearLayoutManager = new LinearLayoutManager(mContext);
-            mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            if (section.getType().equals("HORIZONTAL")) {
+                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+            } else if (section.getType().equals("GRID")) {
+                // TODO implement GRID Layout
+            } else if (section.getType().equals("VERTICAL")) {
+                // TODO implement Vertical Layout manager
+                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            } else {
+                // TODO Default Layout Manager
+            }
+
+
             holder.albumRecyclerView.setLayoutManager(mAlbumListLinearLayoutManager);
             holder.albumRecyclerView.setAdapter(mAlbumlistViewAdapter);
 

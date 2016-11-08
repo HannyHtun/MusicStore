@@ -75,15 +75,29 @@ public class HomeFragment extends Fragment {
         mFireBaseAuth.signInAnonymously();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        mDatabase.child("0").getParent().addChildEventListener(new ChildEventListener() {
+        mDatabase.child("data").getParent().addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 if (initialLoad) {
 
                     // TODO initial Fetch
-                    mScreen = new Screen(dataSnapshot);
+
                     // now we get the Whole Screen and will pass the screen to Recycler Views
-                    renderView(v);
+
+                    for(DataSnapshot ds : dataSnapshot.getChildren()){
+
+
+                          if(ds.hasChild("title")){
+                              if(ds.child("title").getValue().toString().equals("Home")){
+                                  mScreen = new Screen(ds);
+                              }
+
+                              renderView(v);
+                          }
+
+
+                    }
+
                     initialLoad = false;
                 } else {
                     // TODO onChildAdded
