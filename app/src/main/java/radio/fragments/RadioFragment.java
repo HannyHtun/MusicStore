@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +18,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import home.viewadapters.SectionViewAdapter;
 import model.Screen;
+import viewadapters.RadioScreenSectionViewAdapter;
 
 public class RadioFragment extends Fragment {
 
     RecyclerView mSectionRecyclerView;
     LinearLayoutManager mLinearLayoutManager;
-    SectionViewAdapter mSectionViewAdapter;
+    RadioScreenSectionViewAdapter mSectionViewAdapter;
     Screen mScreen;
 
     FirebaseAuth mFireBaseAuth;
@@ -39,6 +40,7 @@ public class RadioFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_radio, container, false);
+        firebase(v);
         return v;
 
     }
@@ -46,14 +48,14 @@ public class RadioFragment extends Fragment {
     void renderView(View v) {
         mSectionRecyclerView = (RecyclerView) v.findViewById(R.id.sectionRecyclerView);
 
-        mSectionViewAdapter = new SectionViewAdapter(this.getActivity(), mScreen.getSections(), new SectionViewAdapter.SectionViewListener() {
+        mSectionViewAdapter = new RadioScreenSectionViewAdapter(this.getActivity(), mScreen.getSections(), new RadioScreenSectionViewAdapter.SectionViewListener() {
             @Override
-            public void onItemClickListener(String FilePath, int position, SectionViewAdapter.SectionViewHolder vh) {
+            public void onItemClickListener(String FilePath, int position, RadioScreenSectionViewAdapter.SectionViewHolder vh) {
 
             }
 
             @Override
-            public void onMenuClickListener(String FilePath, int position, SectionViewAdapter.SectionViewHolder vh) {
+            public void onMenuClickListener(String FilePath, int position, RadioScreenSectionViewAdapter.SectionViewHolder vh) {
 
             }
         });
@@ -82,7 +84,10 @@ public class RadioFragment extends Fragment {
 
                         if(ds.hasChild("title")){
                             if(ds.child("title").getValue().toString().equals("Radio")){
+                                Log.e("RADIO",ds.getValue().toString());
                                 mScreen = new Screen(ds);
+                                renderView(v);
+
 
                             }
 

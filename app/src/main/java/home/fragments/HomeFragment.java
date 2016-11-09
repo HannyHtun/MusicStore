@@ -17,7 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import home.viewadapters.SectionViewAdapter;
+import viewadapters.HomeScreenSectionViewAdapter;
 import model.Screen;
 
 /**
@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
     RecyclerView mSectionRecyclerView;
     LinearLayoutManager mLinearLayoutManager;
-    SectionViewAdapter mSectionViewAdapter;
+    HomeScreenSectionViewAdapter mSectionViewAdapter;
     Screen mScreen;
 
     FirebaseAuth mFireBaseAuth;
@@ -53,14 +53,14 @@ public class HomeFragment extends Fragment {
     void renderView(View v) {
         mSectionRecyclerView = (RecyclerView) v.findViewById(R.id.sectionRecyclerView);
 
-        mSectionViewAdapter = new SectionViewAdapter(this.getActivity(), mScreen.getSections(), new SectionViewAdapter.SectionViewListener() {
+        mSectionViewAdapter = new HomeScreenSectionViewAdapter(this.getActivity(), mScreen.getSections(), new HomeScreenSectionViewAdapter.SectionViewListener() {
             @Override
-            public void onItemClickListener(String FilePath, int position, SectionViewAdapter.SectionViewHolder vh) {
+            public void onItemClickListener(String FilePath, int position, HomeScreenSectionViewAdapter.SectionViewHolder vh) {
 
             }
 
             @Override
-            public void onMenuClickListener(String FilePath, int position, SectionViewAdapter.SectionViewHolder vh) {
+            public void onMenuClickListener(String FilePath, int position, HomeScreenSectionViewAdapter.SectionViewHolder vh) {
 
             }
         });
@@ -126,9 +126,6 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    void showLoading(){
-
-    }
 
 
 }

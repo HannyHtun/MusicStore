@@ -1,4 +1,4 @@
-package home.viewadapters;
+package viewadapters;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,11 +10,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.devfest.musicstore.R;
-
 import java.util.ArrayList;
-
 import model.Album;
 
 
