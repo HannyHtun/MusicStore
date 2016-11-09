@@ -1,6 +1,7 @@
 package home.viewadapters;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -27,31 +28,40 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
     private Context mContext;
     private ArrayList<Album> mAlbumList;
     private AlbumViewListener albumViewListener;
+    private int mOrientation;
 
-    public AlbumViewAdapter(Context context,ArrayList<Album> albums, AlbumViewListener fh) {
+    public AlbumViewAdapter(Context context, ArrayList<Album> albums, int orientation, AlbumViewListener fh) {
 
         this.mContext = context;
         this.mAlbumList = albums;
         this.albumViewListener = fh;
+        this.mOrientation = orientation;
     }
 
     @Override
     public AlbumViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = null;
 
-        View itemView = LayoutInflater.
-                from(parent.getContext()).
-                inflate(R.layout.album_view, parent, false);
+        if (this.mOrientation == LinearLayoutManager.HORIZONTAL) {
+            itemView = LayoutInflater.
+                    from(parent.getContext()).
+                    inflate(R.layout.album_view_horizontal, parent, false);
+        } else {
+            itemView = LayoutInflater.
+                    from(parent.getContext()).
+                    inflate(R.layout.album_view_vertical, parent, false);
+        }
 
         return new AlbumViewAdapter.AlbumViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(AlbumViewHolder holder, int position) {
-         Album album =  this.mAlbumList.get(position);
+        Album album = this.mAlbumList.get(position);
 
 
-        if(album != null){
-            holder.tvAlbumTitle.setText(TextUtils.isEmpty(album.getTitle())?"":album.getTitle());
+        if (album != null) {
+            holder.tvAlbumTitle.setText(TextUtils.isEmpty(album.getTitle()) ? "" : album.getTitle());
 
             holder.tvFollowers.setText(converttoK(album.getFollowers()));
             holder.ivAlbumImage.setBackgroundResource(R.drawable.ic_album);
@@ -59,14 +69,14 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
         }
     }
 
-    private String converttoK(String num) throws NumberFormatException{
+    private String converttoK(String num) throws NumberFormatException {
 
-        if(!TextUtils.isEmpty(num)){
-            if(num.length() >= 4){
+        if (!TextUtils.isEmpty(num)) {
+            if (num.length() >= 4) {
                 Long kVal = Long.valueOf(num);
-                kVal = kVal/1000;
-                return String.valueOf(kVal)+"K";
-            }else{
+                kVal = kVal / 1000;
+                return String.valueOf(kVal) + "K";
+            } else {
                 return num;
             }
         }
@@ -82,7 +92,7 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
         return this.mAlbumList.size();
     }
 
-    public class AlbumViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class AlbumViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView tvAlbumTitle;
         private TextView tvFollowers;
         private ImageView ivAlbumImage;

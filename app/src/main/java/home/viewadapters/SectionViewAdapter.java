@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.devfest.musicstore.R;
@@ -54,23 +55,32 @@ public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.
 
         if (section != null) {
             holder.tvSectionTitle.setText(TextUtils.isEmpty(section.getTitle()) ? "" : section.getTitle());
-            mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), new AlbumViewAdapter.AlbumViewListener() {
 
-                @Override
-                public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
-
-                }
-
-            });
             //BIND Album View Adapter
             mAlbumListLinearLayoutManager = new LinearLayoutManager(mContext);
             if (section.getType().equals("HORIZONTAL")) {
                 mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.HORIZONTAL, new AlbumViewAdapter.AlbumViewListener() {
+
+                    @Override
+                    public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
+
+                    }
+
+                });
             } else if (section.getType().equals("GRID")) {
                 // TODO implement GRID Layout
             } else if (section.getType().equals("VERTICAL")) {
                 // TODO implement Vertical Layout manager
                 mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.VERTICAL, new AlbumViewAdapter.AlbumViewListener() {
+
+                    @Override
+                    public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
+
+                    }
+
+                });
             } else {
                 // TODO Default Layout Manager
             }

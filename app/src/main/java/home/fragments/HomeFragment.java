@@ -85,13 +85,16 @@ public class HomeFragment extends Fragment {
                     // now we get the Whole Screen and will pass the screen to Recycler Views
 
                     for(DataSnapshot ds : dataSnapshot.getChildren()){
+
+
                           if(ds.hasChild("title")){
                               if(ds.child("title").getValue().toString().equals("Home")){
                                   mScreen = new Screen(ds);
                                   renderView(v);
                               }
-
                           }
+
+
                     }
 
                     initialLoad = false;
@@ -121,6 +124,10 @@ public class HomeFragment extends Fragment {
 
             }
         });
+    }
+
+    void showLoading(){
+
     }
 
 

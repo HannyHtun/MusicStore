@@ -40,6 +40,12 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <!--Loading text-->
+    <style name="LoadingText" parent="android:TextAppearance.Widget.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 
     <!-- SectionTitle Text -->
     <style name="SectionTitleText" parent="android:TextAppearance.Widget.TextView">
