@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:background="@color/mainBgColor"
     android:layout_height="match_parent"
-    tools:context="home.fragments.HomeFragment">
+    tools:context=".fragments.HomeFragment">
 
     <TextView
         android:id="@+id/tvLoading"

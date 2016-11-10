@@ -1,10 +1,13 @@
 package util;
 
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 
 import java.util.ArrayList;
 
 import model.Album;
+import model.Genere;
 import model.Row;
 import model.Section;
 
@@ -62,13 +65,28 @@ public class ScreenParser {
      */
     public Row parseRow(DataSnapshot ds) {
         Row row = new Row();
-        row.setAlbums(parseAlbums(ds.child("data")));
+        for (DataSnapshot rowData : ds.child("data").getChildren()) {
+            Log.e("PARSER", rowData.child("type").getValue().toString());
+            if (rowData.child("type").getValue().toString().equals("genere")) {
+                // TODO GENERE PARSING
+                row.setGeneres(parseGenere(ds.child("data")));
+            }
+
+            if (rowData.child("type").getValue().toString().equals("album")) {
+                // TODO GENERE PARSING
+                row.setAlbums(parseAlbums(ds.child("data")));
+
+            }
+
+
+        }
+
         return row;
     }
 
 
     /**
-     * This method is to parse Albums according DataSnapShot
+     * This method is to parse Albums according to DataSnapShot
      *
      * @param ds DataSnapShot
      * @return ArrayList<Album>
@@ -85,6 +103,24 @@ public class ScreenParser {
             albumList.add(a);
         }
         return albumList;
+    }
+
+
+    /**
+     * This method is to parse Genere according to DataSnapShot
+     *
+     * @param ds
+     * @return ArrayList<Genere>
+     */
+    public ArrayList<Genere> parseGenere(DataSnapshot ds) {
+        ArrayList<Genere> genereList = new ArrayList<>();
+        for (DataSnapshot genere : ds.getChildren()) {
+            Genere g = new Genere();
+            g.setTitle(genere.hasChild("title") ? genere.child("title").getValue().toString() : "");
+            g.setType(genere.hasChild("type") ? genere.child("type").getValue().toString() : "");
+            genereList.add(g);
+        }
+        return genereList;
     }
 
 

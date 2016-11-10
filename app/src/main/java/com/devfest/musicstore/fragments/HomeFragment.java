@@ -1,4 +1,4 @@
-package radio.fragments;
+package com.devfest.musicstore.fragments;
 
 
 import android.os.Bundle;
@@ -17,43 +17,50 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import home.viewadapters.SectionViewAdapter;
+import viewadapters.HomeScreenSectionViewAdapter;
 import model.Screen;
 
-public class RadioFragment extends Fragment {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class HomeFragment extends Fragment {
 
     RecyclerView mSectionRecyclerView;
     LinearLayoutManager mLinearLayoutManager;
-    SectionViewAdapter mSectionViewAdapter;
+    HomeScreenSectionViewAdapter mSectionViewAdapter;
     Screen mScreen;
 
     FirebaseAuth mFireBaseAuth;
     DatabaseReference mDatabase;
     boolean initialLoad = true;
-    public RadioFragment() {
+
+    public HomeFragment() {
+
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_radio, container, false);
-        return v;
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
+        firebase(v);
 
+        return v;
     }
 
     void renderView(View v) {
         mSectionRecyclerView = (RecyclerView) v.findViewById(R.id.sectionRecyclerView);
 
-        mSectionViewAdapter = new SectionViewAdapter(this.getActivity(), mScreen.getSections(), new SectionViewAdapter.SectionViewListener() {
+        mSectionViewAdapter = new HomeScreenSectionViewAdapter(this.getActivity(), mScreen.getSections(), new HomeScreenSectionViewAdapter.SectionViewListener() {
             @Override
-            public void onItemClickListener(String FilePath, int position, SectionViewAdapter.SectionViewHolder vh) {
+            public void onItemClickListener(String FilePath, int position, HomeScreenSectionViewAdapter.SectionViewHolder vh) {
 
             }
 
             @Override
-            public void onMenuClickListener(String FilePath, int position, SectionViewAdapter.SectionViewHolder vh) {
+            public void onMenuClickListener(String FilePath, int position, HomeScreenSectionViewAdapter.SectionViewHolder vh) {
 
             }
         });
@@ -80,13 +87,12 @@ public class RadioFragment extends Fragment {
                     for(DataSnapshot ds : dataSnapshot.getChildren()){
 
 
-                        if(ds.hasChild("title")){
-                            if(ds.child("title").getValue().toString().equals("Radio")){
-                                mScreen = new Screen(ds);
-
-                            }
-
-                        }
+                          if(ds.hasChild("title")){
+                              if(ds.child("title").getValue().toString().equals("Home")){
+                                  mScreen = new Screen(ds);
+                                  renderView(v);
+                              }
+                          }
 
 
                     }
@@ -119,5 +125,7 @@ public class RadioFragment extends Fragment {
             }
         });
     }
+
+
 
 }

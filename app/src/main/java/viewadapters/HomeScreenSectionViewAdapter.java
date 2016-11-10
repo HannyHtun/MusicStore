@@ -1,4 +1,4 @@
-package home.viewadapters;
+package viewadapters;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.devfest.musicstore.R;
@@ -22,7 +21,7 @@ import model.Section;
  * Created by winhtaikaung on 5/11/16.
  */
 
-public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.SectionViewHolder> {
+public class HomeScreenSectionViewAdapter extends RecyclerView.Adapter<HomeScreenSectionViewAdapter.SectionViewHolder> {
 
     // Horizontal View Adapter
     private Context mContext;
@@ -31,7 +30,7 @@ public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.
     private AlbumViewAdapter mAlbumlistViewAdapter;
     private LinearLayoutManager mAlbumListLinearLayoutManager;
 
-    public SectionViewAdapter(Context context, ArrayList<Section> sections, SectionViewListener vh) {
+    public HomeScreenSectionViewAdapter(Context context, ArrayList<Section> sections, SectionViewListener vh) {
 
         this.mContext = context;
         this.mSections = sections;
@@ -52,35 +51,38 @@ public class SectionViewAdapter extends RecyclerView.Adapter<SectionViewAdapter.
     public void onBindViewHolder(SectionViewHolder holder, int position) {
         Section section = this.mSections.get(position);
 
-
         if (section != null) {
             holder.tvSectionTitle.setText(TextUtils.isEmpty(section.getTitle()) ? "" : section.getTitle());
 
             //BIND Album View Adapter
             mAlbumListLinearLayoutManager = new LinearLayoutManager(mContext);
-            if (section.getType().equals("HORIZONTAL")) {
-                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-                mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.HORIZONTAL, new AlbumViewAdapter.AlbumViewListener() {
+            if (section.getmRow().getAlbums() != null) {
+                if (section.getType().equals("HORIZONTAL")) {
+                    mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                    mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.HORIZONTAL, new AlbumViewAdapter.AlbumViewListener() {
 
-                    @Override
-                    public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
+                        @Override
+                        public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
 
-                    }
+                        }
 
-                });
+                    });
+                }
             } else if (section.getType().equals("GRID")) {
                 // TODO implement GRID Layout
             } else if (section.getType().equals("VERTICAL")) {
                 // TODO implement Vertical Layout manager
-                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.VERTICAL, new AlbumViewAdapter.AlbumViewListener() {
+                if (section.getmRow().getAlbums() != null) {
+                    mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.VERTICAL, new AlbumViewAdapter.AlbumViewListener() {
 
-                    @Override
-                    public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
+                        @Override
+                        public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
 
-                    }
+                        }
 
-                });
+                    });
+                }
             } else {
                 // TODO Default Layout Manager
             }
