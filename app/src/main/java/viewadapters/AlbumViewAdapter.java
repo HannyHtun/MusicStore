@@ -10,8 +10,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.devfest.musicstore.R;
+
 import java.util.ArrayList;
+
 import model.Album;
 
 
@@ -61,9 +65,23 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
             holder.tvAlbumTitle.setText(TextUtils.isEmpty(album.getTitle()) ? "" : album.getTitle());
 
             holder.tvFollowers.setText(converttoK(album.getFollowers()));
-            holder.ivAlbumImage.setBackgroundResource(R.drawable.ic_album);
+
+            if (album.getImgUrl() != null && !TextUtils.isEmpty(album.getImgUrl())) {
+                holder.ivDefaultImage.setVisibility(View.GONE);
+                Glide.with(mContext).load(album.getImgUrl()).centerCrop().into(holder.ivAlbumImage);
+            } else {
+                holder.ivAlbumImage.setVisibility(View.GONE);
+                holder.ivDefaultImage.setBackgroundResource(R.drawable.ic_album);
+            }
+
 
         }
+    }
+
+    @Override
+    public void onViewRecycled(AlbumViewHolder holder) {
+        super.onViewRecycled(holder);
+        holder.cleanUp();
     }
 
     private String converttoK(String num) throws NumberFormatException {
@@ -92,6 +110,7 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
     public class AlbumViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView tvAlbumTitle;
         private TextView tvFollowers;
+        private ImageView ivDefaultImage;
         private ImageView ivAlbumImage;
         private FrameLayout folderContainerLayout;
 
@@ -99,10 +118,15 @@ public class AlbumViewAdapter extends RecyclerView.Adapter<AlbumViewAdapter.Albu
             super(itemView);
             tvAlbumTitle = (TextView) itemView.findViewById(R.id.album_title);
             tvFollowers = (TextView) itemView.findViewById(R.id.tv_followers);
+            ivDefaultImage = (ImageView) itemView.findViewById(R.id.iv_album_default_view);
             ivAlbumImage = (ImageView) itemView.findViewById(R.id.iv_album_view);
 
             folderContainerLayout = (FrameLayout) itemView.findViewById(R.id.frame_album_container);
             folderContainerLayout.setOnClickListener(this);
+        }
+
+        public void cleanUp() {
+            Glide.clear(ivAlbumImage);
         }
 
         @Override

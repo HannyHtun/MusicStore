@@ -1,4 +1,4 @@
-package radio.fragments;
+package com.devfest.musicstore.fragments;
 
 
 import android.os.Bundle;
@@ -79,22 +79,7 @@ public class RadioFragment extends Fragment {
 
                     // now we get the Whole Screen and will pass the screen to Recycler Views
 
-                    for(DataSnapshot ds : dataSnapshot.getChildren()){
-
-
-                        if(ds.hasChild("title")){
-                            if(ds.child("title").getValue().toString().equals("Radio")){
-                                Log.e("RADIO",ds.getValue().toString());
-                                mScreen = new Screen(ds);
-                                renderView(v);
-
-
-                            }
-
-                        }
-
-
-                    }
+                    fetchAndBind(dataSnapshot,v);
 
                     initialLoad = false;
                 } else {
@@ -106,6 +91,7 @@ public class RadioFragment extends Fragment {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 // TODO play with data when onChildChanged
+                fetchAndBind(dataSnapshot,v);
             }
 
             @Override
@@ -125,4 +111,25 @@ public class RadioFragment extends Fragment {
         });
     }
 
+    void fetchAndBind(DataSnapshot dataSnapshot,View v){
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+
+
+            if(ds.hasChild("title")){
+                if(ds.child("title").getValue().toString().equals("Radio")){
+                    Log.e("RADIO",ds.getValue().toString());
+                    mScreen = new Screen(ds);
+                    renderView(v);
+
+
+                }
+
+            }
+
+
+        }
+    }
+
 }
+
+

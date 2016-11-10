@@ -28,7 +28,8 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
     private ArrayList<Section> mSections;
     private SectionViewListener sectionViewListener;
     private AlbumViewAdapter mAlbumlistViewAdapter;
-    private LinearLayoutManager mAlbumListLinearLayoutManager;
+    private GenereViewAdapter mGenereViewAdapter;
+    private LinearLayoutManager mGenereListLayoutManager;
 
     public RadioScreenSectionViewAdapter(Context context, ArrayList<Section> sections, SectionViewListener vh) {
 
@@ -56,9 +57,9 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
             holder.tvSectionTitle.setText(TextUtils.isEmpty(section.getTitle()) ? "" : section.getTitle());
 
             //BIND Album View Adapter
-            mAlbumListLinearLayoutManager = new LinearLayoutManager(mContext);
+            mGenereListLayoutManager = new LinearLayoutManager(mContext);
             if (section.getType().equals("HORIZONTAL")) {
-                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                mGenereListLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
                 if (section.getmRow().getAlbums() != null) {
 
                     mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.HORIZONTAL, new AlbumViewAdapter.AlbumViewListener() {
@@ -69,6 +70,20 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
                         }
 
                     });
+                    holder.albumRecyclerView.setLayoutManager(mGenereListLayoutManager);
+                    holder.albumRecyclerView.setAdapter(mAlbumlistViewAdapter);
+
+                }
+
+                if(section.getmRow().getGeneres() != null){
+                    mGenereViewAdapter = new GenereViewAdapter(mContext, section.getmRow().getGeneres(), LinearLayoutManager.HORIZONTAL, new GenereViewAdapter.GenereViewListener() {
+                        @Override
+                        public void onItemClickListener(String FilePath, int position, GenereViewAdapter.GenereViewHolder vh) {
+
+                        }
+                    });
+                    holder.albumRecyclerView.setLayoutManager(mGenereListLayoutManager);
+                    holder.albumRecyclerView.setAdapter(mGenereViewAdapter);
 
                 }
 
@@ -76,7 +91,7 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
                 // TODO implement GRID Layout
             } else if (section.getType().equals("VERTICAL")) {
                 // Vertical Layout manager
-                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                mGenereListLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
                 if (section.getmRow().getAlbums() != null) {
 
                     mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.VERTICAL, new AlbumViewAdapter.AlbumViewListener() {
@@ -87,14 +102,25 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
                         }
 
                     });
+                    holder.albumRecyclerView.setLayoutManager(mGenereListLayoutManager);
+                    holder.albumRecyclerView.setAdapter(mAlbumlistViewAdapter);
 
+                }
+                if(section.getmRow().getGeneres() != null){
+                    mGenereViewAdapter = new GenereViewAdapter(mContext, section.getmRow().getGeneres(), LinearLayoutManager.VERTICAL, new GenereViewAdapter.GenereViewListener() {
+                        @Override
+                        public void onItemClickListener(String FilePath, int position, GenereViewAdapter.GenereViewHolder vh) {
+
+                        }
+                    });
+                    holder.albumRecyclerView.setLayoutManager(mGenereListLayoutManager);
+                    holder.albumRecyclerView.setAdapter(mGenereViewAdapter);
                 }
             } else {
                 // TODO Default Layout Manager
             }
 
-            holder.albumRecyclerView.setLayoutManager(mAlbumListLinearLayoutManager);
-            holder.albumRecyclerView.setAdapter(mAlbumlistViewAdapter);
+
 
         }
 

@@ -51,35 +51,38 @@ public class HomeScreenSectionViewAdapter extends RecyclerView.Adapter<HomeScree
     public void onBindViewHolder(SectionViewHolder holder, int position) {
         Section section = this.mSections.get(position);
 
-
         if (section != null) {
             holder.tvSectionTitle.setText(TextUtils.isEmpty(section.getTitle()) ? "" : section.getTitle());
 
             //BIND Album View Adapter
             mAlbumListLinearLayoutManager = new LinearLayoutManager(mContext);
-            if (section.getType().equals("HORIZONTAL")) {
-                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-                mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.HORIZONTAL, new AlbumViewAdapter.AlbumViewListener() {
+            if (section.getmRow().getAlbums() != null) {
+                if (section.getType().equals("HORIZONTAL")) {
+                    mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                    mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.HORIZONTAL, new AlbumViewAdapter.AlbumViewListener() {
 
-                    @Override
-                    public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
+                        @Override
+                        public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
 
-                    }
+                        }
 
-                });
+                    });
+                }
             } else if (section.getType().equals("GRID")) {
                 // TODO implement GRID Layout
             } else if (section.getType().equals("VERTICAL")) {
                 // TODO implement Vertical Layout manager
-                mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.VERTICAL, new AlbumViewAdapter.AlbumViewListener() {
+                if (section.getmRow().getAlbums() != null) {
+                    mAlbumListLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    mAlbumlistViewAdapter = new AlbumViewAdapter(mContext, section.getmRow().getAlbums(), LinearLayoutManager.VERTICAL, new AlbumViewAdapter.AlbumViewListener() {
 
-                    @Override
-                    public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
+                        @Override
+                        public void onItemClickListener(String FilePath, int position, AlbumViewAdapter.AlbumViewHolder vh) {
 
-                    }
+                        }
 
-                });
+                    });
+                }
             } else {
                 // TODO Default Layout Manager
             }

@@ -5,8 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 
-import home.fragments.HomeFragment;
-import radio.fragments.RadioFragment;
+import com.devfest.musicstore.fragments.HomeFragment;
+import com.devfest.musicstore.fragments.RadioFragment;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 

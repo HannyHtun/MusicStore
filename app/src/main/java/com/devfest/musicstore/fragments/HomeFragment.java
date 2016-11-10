@@ -1,4 +1,4 @@
-package home.fragments;
+package com.devfest.musicstore.fragments;
 
 
 import android.os.Bundle;
