@@ -31,5 +31,5 @@ Required Software
 * Android SDK Build tools (not everything but some latest version)
 * Android SDK (all) extras. 
 
-
+![MusicStore Home Screen](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/screenshot.png)
 
