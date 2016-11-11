@@ -16,7 +16,8 @@ We will assume all the participants have setup their laptops for android develop
   + [Learn Java in Y Minutes](http://learnxinyminutes.com/docs/java/)
   + [Java Programming Cheatsheet](http://introcs.cs.princeton.edu/java/11cheatsheet/)
   + [Learn Java for Android Development](http://code.tutsplus.com/series/learn-java-for-android-development--mobile-22888)
-  + [What is JSON](http://json.org/)
+  + [What is FireBase?](https://firebase.google.com/)
+  + [What is RecyclerView?](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.html)
   + [Android Glossary](https://developer.android.com/guide/appendix/glossary.html)
 
 
