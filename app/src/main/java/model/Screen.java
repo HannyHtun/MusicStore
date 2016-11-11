@@ -5,9 +5,6 @@ import com.google.firebase.database.DataSnapshot;
 import java.util.ArrayList;
 import util.ScreenParser;
 
-/**
- * Created by win on 11/4/16.
- */
 
 public class Screen {
     public static final String SCREEN_TITLE = "title";

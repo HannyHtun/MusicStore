@@ -119,9 +119,6 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
             } else {
                 // TODO Default Layout Manager
             }
-
-
-
         }
 
 
@@ -129,8 +126,6 @@ public class RadioScreenSectionViewAdapter extends RecyclerView.Adapter<RadioScr
 
     public interface SectionViewListener {
         void onItemClickListener(String FilePath, int position, SectionViewHolder vh);
-
-        void onMenuClickListener(String FilePath, int position, SectionViewHolder vh);
 
     }
 

@@ -44,7 +44,7 @@
         <TextView
             android:id="@+id/album_title"
             style="@style/AlbumTitleText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_album_default_view"
             android:layout_centerHorizontal="true"
@@ -54,6 +54,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="album Title" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,7 +78,7 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:ellipsize="end"
-                android:gravity="center"
+                android:gravity="left"
                 android:text="@string/album_followers" />
         </LinearLayout>
     </LinearLayout>

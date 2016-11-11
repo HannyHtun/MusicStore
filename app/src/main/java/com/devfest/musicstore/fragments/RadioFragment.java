@@ -27,7 +27,6 @@ public class RadioFragment extends Fragment {
     LinearLayoutManager mLinearLayoutManager;
     RadioScreenSectionViewAdapter mSectionViewAdapter;
     Screen mScreen;
-
     FirebaseAuth mFireBaseAuth;
     DatabaseReference mDatabase;
     boolean initialLoad = true;
@@ -42,7 +41,6 @@ public class RadioFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_radio, container, false);
         firebase(v);
         return v;
-
     }
 
     void renderView(View v) {
@@ -52,12 +50,9 @@ public class RadioFragment extends Fragment {
             @Override
             public void onItemClickListener(String FilePath, int position, RadioScreenSectionViewAdapter.SectionViewHolder vh) {
 
+                // TODO Do Section Item Click Here
             }
 
-            @Override
-            public void onMenuClickListener(String FilePath, int position, RadioScreenSectionViewAdapter.SectionViewHolder vh) {
-
-            }
         });
         mLinearLayoutManager = new LinearLayoutManager(this.getActivity());
         mLinearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -120,7 +115,6 @@ public class RadioFragment extends Fragment {
                     Log.e("RADIO",ds.getValue().toString());
                     mScreen = new Screen(ds);
                     renderView(v);
-
 
                 }
 
