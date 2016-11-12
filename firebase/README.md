@@ -42,6 +42,6 @@ Steps to make an app on Firebase
 
 - import Data from json
 
-- [Click here to view the json](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/musicstore-2fb5b-export.json:w
+- [Click here to view the json](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/musicstore-2fb5b-export.json)
 
 ![FireBase Step 6](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step6.png)
