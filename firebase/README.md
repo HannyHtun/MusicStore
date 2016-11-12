@@ -1,5 +1,37 @@
 Steps to make an app on Firebase
 ======================================
-Step 1
+**Step 1**
+ * First Go to http://firebase.google.com
+	* [Click on Go to Console](https://firebase.google.com/console/)
+	* Click on **Create New Project**
+	* Type in Project name & Country
+	* Then you will see as shown in figure
+![FireBase Step 1](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step1.png)
 
-![MusicStore Home Screen](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/screenshot.png)
+**Step 2**
+
+![FireBase Step 2](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step2.png)
+
+**Step 3**
+
+ - Here you will see the google-services.json was downloaded to your machine.
+ - place that file to project **app** folder.
+
+![FireBase Step 3](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step3.png)
+
+**Step 4**
+
+- add this line to project root level Gradle file (`<project>/build.gradle`)
+
+        classpath 'com.google.gms:google-services:3.0.0'
+
+- then add this line to(`<project>/<app-module>/build.gradle`)
+
+        apply plugin: 'com.google.gms.google-services'
+- then click **FINISH**
+
+![FireBase Step 4](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step4.png)
+
+**Step 5**
+-then you will see as following figure
+![FireBase Step 5](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step5.png)
