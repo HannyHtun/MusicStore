@@ -25,15 +25,23 @@ Steps to make an app on Firebase
 
         classpath 'com.google.gms:google-services:3.0.0'
 
-- then add this line to(`<project>/<app-module>/build.gradle`)
+- add this line to(`<project>/<app-module>/build.gradle`)
 
         apply plugin: 'com.google.gms.google-services'
-- then click **FINISH**
+- Click **FINISH**
 
 ![FireBase Step 4](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step4.png)
 
 **Step 5**
 
--then you will see as following figure
+-you will see as following figure
 
 ![FireBase Step 5](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step5.png)
+
+**Step 6(Optional)**
+
+- import Data from json
+
+- [Click here to view the json](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/musicstore-2fb5b-export.json:w
+
+![FireBase Step 6](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step6.png)
