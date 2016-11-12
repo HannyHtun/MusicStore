@@ -1,0 +1,247 @@
+{
+  "data" : [ {
+    "sections" : [ {
+      "row" : {
+        "data" : [ {
+          "followers" : "8772312910000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/4/48/John_Legend_-_Heaven.jpg",
+          "title" : "John Legand",
+          "type" : "album"
+        }, {
+          "followers" : "6222443410000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/c/cb/Meghan_Trainor_Title_EP_Album_Cover.png",
+          "title" : "Megan Trainor",
+          "type" : "album"
+        }, {
+          "followers" : "1554702410000",
+          "img" : "https://s-media-cache-ak0.pinimg.com/originals/eb/bd/86/ebbd86f36c47ede17029521ad9c3168d.jpg",
+          "title" : "Bruno Mars",
+          "type" : "album"
+        }, {
+          "followers" : "3264162310000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/9/96/BJ_Greatest.jpg",
+          "title" : "BonJovi",
+          "type" : "album"
+        }, {
+          "followers" : "5628519310000",
+          "img" : "http://img2-ak.lst.fm/i/u/ar0/d2853bf5e0054840ad9209536d056cd2",
+          "title" : "Nirvana",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Just For You",
+      "type" : "VERTICAL"
+    }, {
+      "row" : {
+        "data" : [ {
+          "followers" : "4437967410000",
+          "img" : "http://img2-ak.lst.fm/i/u/ar0/d2853bf5e0054840ad9209536d056cd2",
+          "title" : "Nirvana",
+          "type" : "album"
+        }, {
+          "followers" : "4122518610000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/9/96/BJ_Greatest.jpg",
+          "title" : "BonJovi",
+          "type" : "album"
+        }, {
+          "followers" : "1710768610000",
+          "img" : "https://s-media-cache-ak0.pinimg.com/originals/eb/bd/86/ebbd86f36c47ede17029521ad9c3168d.jpg",
+          "title" : "Bruno Mars",
+          "type" : "album"
+        }, {
+          "followers" : "9571592410000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/c/cb/Meghan_Trainor_Title_EP_Album_Cover.png",
+          "title" : "Megan Trainor",
+          "type" : "album"
+        }, {
+          "followers" : "7583303110000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/b/b9/Ellie_Goulding_-_Lights_%28album%29.png",
+          "title" : "Ellie Goulding",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Jump Back In",
+      "type" : "HORIZONTAL"
+    }, {
+      "row" : {
+        "data" : [ {
+          "followers" : "2918517410000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Rock Me Up",
+          "type" : "album"
+        }, {
+          "followers" : "6839235010000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Swagger",
+          "type" : "album"
+        }, {
+          "followers" : "4533136410000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Post Garage Wave Revival",
+          "type" : "album"
+        }, {
+          "followers" : "4247232510000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Rock Solid",
+          "type" : "album"
+        }, {
+          "followers" : "349593710000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Emo",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Recently Played",
+      "type" : "HORIZONTAL"
+    }, {
+      "row" : {
+        "data" : [ {
+          "followers" : "749891310000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Rock Me Up",
+          "type" : "album"
+        }, {
+          "followers" : "6784991910000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Swagger",
+          "type" : "album"
+        }, {
+          "followers" : "9004063210000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Post Garage Wave Revival",
+          "type" : "album"
+        }, {
+          "followers" : "9670265410000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Rock Solid",
+          "type" : "album"
+        }, {
+          "followers" : "5645510310000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Emo",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Chill out Tonight",
+      "type" : "HORIZONTAL"
+    }, {
+      "row" : {
+        "data" : [ {
+          "followers" : "2519552210000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Rock Me Up",
+          "type" : "album"
+        }, {
+          "followers" : "1885825310000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Swagger",
+          "type" : "album"
+        }, {
+          "followers" : "3700374810000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Post Garage Wave Revival",
+          "type" : "album"
+        }, {
+          "followers" : "8648681010000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Rock Solid",
+          "type" : "album"
+        }, {
+          "followers" : "5319324910000",
+          "img" : "http://placeholderit.com/",
+          "title" : "Emo",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Pop",
+      "type" : "HORIZONTAL"
+    } ],
+    "title" : "Home"
+  }, {
+    "sections" : [ {
+      "row" : {
+        "data" : [ {
+          "followers" : "3395230310000",
+          "img" : "https://www.popjustice.com/wp-content/uploads/2012/10/bruno-mars-unorthodox-jukebox-artwork.jpg",
+          "title" : "Unorth DukeBox",
+          "type" : "album"
+        }, {
+          "followers" : "5807016210000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/b/b9/Ellie_Goulding_-_Lights_%28album%29.png",
+          "title" : "Ellie Goulding",
+          "type" : "album"
+        }, {
+          "followers" : "7348576610000",
+          "img" : "http://rvamag.com/sites/default/files/imagecache/Article_Original/articles/11102760_10153394244861435_1366279085489763772_n.jpg",
+          "title" : "Lamb Of God",
+          "type" : "album"
+        }, {
+          "followers" : "2266483110000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/8/86/Taylor_Swift_-_Fearless.png",
+          "title" : "Taylor Swift",
+          "type" : "album"
+        }, {
+          "followers" : "915234310000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/6/64/MeteoraLP.jpg",
+          "title" : "Linkin Park",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Channels",
+      "type" : "HORIZONTAL"
+    }, {
+      "row" : {
+        "data" : [ {
+          "followers" : "5841250710000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/4/48/John_Legend_-_Heaven.jpg",
+          "title" : "John Legend",
+          "type" : "album"
+        }, {
+          "followers" : "5773393510000",
+          "img" : "http://hiphop-n-more.com/wp-content/uploads/2011/02/snoop-doggumentary-300x300.jpg",
+          "title" : "Snoop Dogg",
+          "type" : "album"
+        }, {
+          "followers" : "7183141510000",
+          "img" : "https://upload.wikimedia.org/wikipedia/en/c/cf/Pessenger_nico_touches_the_walls_album.jpg",
+          "title" : "Passenger",
+          "type" : "album"
+        }, {
+          "followers" : "7478308010000",
+          "img" : "https://tartillos.files.wordpress.com/2011/07/eminem-recovery-official-album-cover.jpg",
+          "title" : "Eminem",
+          "type" : "album"
+        }, {
+          "followers" : "5099512410000",
+          "img" : "http://vignette2.wikia.nocookie.net/fifthharmony/images/5/53/Album_14_7060_8986_2981.png",
+          "title" : "5th Harmony",
+          "type" : "album"
+        } ]
+      },
+      "title" : "Recommanded Stations",
+      "type" : "HORIZONTAL"
+    }, {
+      "row" : {
+        "data" : [ {
+          "title" : "Blues",
+          "type" : "genere"
+        }, {
+          "title" : "Classical",
+          "type" : "genere"
+        }, {
+          "title" : "Comedy",
+          "type" : "genere"
+        }, {
+          "title" : "Country",
+          "type" : "genere"
+        }, {
+          "title" : "Club",
+          "type" : "genere"
+        } ]
+      },
+      "title" : "Genere",
+      "type" : "VERTICAL"
+    } ],
+    "title" : "Radio"
+  } ]
+}

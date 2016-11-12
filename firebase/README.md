@@ -5,7 +5,7 @@ Steps to make an app on Firebase
 	* [Click on Go to Console](https://firebase.google.com/console/)
 	* Click on **Create New Project**
 	* Type in Project name & Country
-	* Then you will see as shown in figure
+	* Select Add Firebase to Your android app
 ![FireBase Step 1](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step1.png)
 
 **Step 2**
@@ -33,5 +33,7 @@ Steps to make an app on Firebase
 ![FireBase Step 4](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step4.png)
 
 **Step 5**
+
 -then you will see as following figure
+
 ![FireBase Step 5](https://raw.githubusercontent.com/winhtaikaung/MusicStore/master/firebase/step5.png)
