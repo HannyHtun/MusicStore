@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import util.ScreenParser;
 
 
+
 public class Screen {
     public static final String SCREEN_TITLE = "title";
     public static final String SECTIONS = "sections";

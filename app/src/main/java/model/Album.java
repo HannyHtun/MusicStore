@@ -1,8 +1,6 @@
 package model;
 
-/**
- * Created by win on 11/5/16.
- */
+
 
 public class Album {
 

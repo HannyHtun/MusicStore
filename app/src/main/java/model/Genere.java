@@ -1,8 +1,6 @@
 package model;
 
-/**
- * Created by winhtaikaung on 10/11/16.
- */
+
 
 public class Genere {
     private String title;

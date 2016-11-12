@@ -16,9 +16,6 @@ import java.util.ArrayList;
 import model.Genere;
 
 
-/**
- * Created by winhtaikaung on 5/11/16.
- */
 
 public class GenereViewAdapter extends RecyclerView.Adapter<GenereViewAdapter.GenereViewHolder> {
 
