@@ -1,10 +1,6 @@
 package model;
 
-import java.util.ArrayList;
 
-/**
- * Created by win on 11/4/16.
- */
 
 public class Section {
     private String title;

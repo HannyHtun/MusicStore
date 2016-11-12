@@ -17,9 +17,6 @@ import java.util.ArrayList;
 import model.Section;
 
 
-/**
- * Created by winhtaikaung on 5/11/16.
- */
 
 public class HomeScreenSectionViewAdapter extends RecyclerView.Adapter<HomeScreenSectionViewAdapter.SectionViewHolder> {
 
